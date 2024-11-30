@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit=no>
+    <title>Patients Dashboard</title>
+    {{!-- <link rel="stylesheet" href="/css/bootstrap-grid.min.css"> --}}
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/dashboard.css">
+</head>
+
+<body>
+    <header class="container-fluid">
+        <h1 style="color: rgb(94, 128, 0); font-size:25px">MedConnect</h1>
+        <h3 style="margin-top: 10px; font-size: 15px;">Welcome Ade</h3>
+        <h2 class="dashboardtext">Dashboard</h2>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success searchbtn" type="submit">Search</button>
+            <a href="/dashboard/edit-profile/{{patient.patient_id}}" type="button" class="btn btn-light profile"
+                style="top: 10%; font-size:15px"><i class="bi bi-person-square">
+                    Edit Profile</i></a>
+        </form>
+    </header>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <h3 class="menu" style="margin-left: 70px; margin-top: 20px;"><i class="bi bi-list" id="btn"></i>Menu</h3>
+        <i class="bi bi-x-circle-fill" id="cancel"></i>
+    </label>
+    <nav class="navbars">
+        <ul class="toplist">
+        <h1 style="color: rgb(94, 128, 0); font-size:25px">MedConnect</h1>
+            <h2>Welcome <br>
+                {{patient.firstname}}</h2>
+
+
+            <li><a href=""><i class="bi bi-house-up-fill"></i> Home</a></li>
+
+            <li><a href="/bookappointment"><i class="bi bi-bookmarks-fill"></i> Book Appointment</a></li>
+
+            <li><a href="/patient/viewdoctor"><i class="bi bi-person-fill"></i> View Doctors</a></li>
+
+            <li><a href="/checkappointment"><i class="bi">&#x1F9EA;</i> check appointments</a></li>
+
+            <li><a href=""><i class="bi bi-capsule"></i> Medicine</a></li>
+            <li>
+            <li><a href=""><i class="bi bi-clipboard2-pulse"></i> Medical Test</a></li>
+            <li>
+            <li><a href=""><i class="bi bi-prescription2"></i></i> Prescriptions</a></li>
+            <li>
+            <li><a href=""><i class="bi bi-file-medical"></i> Health Record</a></li>
+            <li>
+                <ul class="bottomlist">
+
+                    <li><a href=""><i class="bi bi-gear-fill"></i> General</a></li>
+
+                    <li><a href="/logout"><i class="bi bi-box-arrow-left"></i> </i>Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <div class="row">
+            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9; justify-content:space-between ">
+                <img src="/images/heartbeat.png" alt="" class="heart">
+                <h5 class="imagetext">Heart rate</h5>
+                <p class="imagetext">90BPM</p>
+            </div>
+            <div class="col-md-6 col-sm-12" style="background-color: #403d39; justify-content:space-between ">
+                <img src="/images/weight-management.png" alt="" class="heart">
+                <h5 class="imagetext" style="margin-left: 20%;">Total Weight</h5>
+                <p class="imagetext">72KG</p>
+            </div>
+            <div class="col-md-6 col-sm-12" style="background-color: #EB5E28; justify-content:space-between ">
+                <img src="/images/Human-red-blood-cells.png" alt="" class="heart">
+                <h5 class="imagetext" >Blood cells</h5>
+                <p class="imagetext">1500μL</p>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9;">
+                <img src="/images/team-3copy.jpg" alt="" class="heart">
+                <h4 class="doctortext">Sara Ab</h4>
+                <p style="margin-top: 40px;">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                 <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
+            </div>
+            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9; ">
+                <img src="/images/team-2copy.jpg" alt="" class="heart">
+                <h4 class="doctortext">Mike Myers</h3>
+                <p style="margin-top: 40px;">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
+            </div>
+            <div class="col-md-6 col-sm-12" style="background-color: #ccc5b9; ">
+                <img src="/images/team-1copy.jpg" alt="" class="heart">
+                 <h4 class="doctortext">Jordan	Michael</h4>
+                <p>Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                 <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- Design by Kelani Yunus Oluwadamilare
+email yunuskelani2@gmail.com//
+phone: +2348140470626 --}}

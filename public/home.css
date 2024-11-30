@@ -1,0 +1,89 @@
+body{
+    background: linear-gradient(to right, rgb(135, 135, 248),green );
+}
+#loginV{
+    margin-top: 160px;
+    color: rgba(26, 26, 26, 0.685);
+    background-color: white;
+    width: 80%;
+    transform: translatex(15%);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0px 0px 10px black;
+    font-size: 25px;
+}
+h2{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.container-fluid{
+    display: block;
+    width: 100%;
+}
+.navbar-center{
+    padding-left: 12%;
+}
+
+ul li{
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.bi-person-circle{
+    font-size: 40px;
+}
+.dash{
+    text-transform: capitalize;
+}
+
+.card{
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+.card-img-top{
+
+    width: 100px; 
+    display: block; 
+    margin: auto;
+}
+.form-select{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.alert-warning{
+    display: block;
+    margin: auto;
+}
+   
+th, td{
+    border: 2px solid black;   
+}
+td{
+    font-size: 10px;
+}
+.theading th{
+    background-color: lightgreen;
+    color: white;
+    /* max-width: fit-content; */
+}
+.theading{
+    text-transform: capitalize; 
+}
+
+
+@media screen and (max-width: 600px){
+    .navbar-center{
+        padding-left: 0;
+    }
+}
+table{
+    /* display: flex;
+    flex-wrap: wrap; */
+    max-width: fit-content;
+}
