@@ -5,6 +5,7 @@ const { isAuthenticated } = require(`./middlewares/auth`);
 const { isAuthenticateddoctororadmin } = require(`./middlewares/authdoctor`)
 const router = require(`./routes/pages`)
 const path = require(`path`)
+const session = require("express-session")
 
 const app = express();
 const port = process.env.PORT || 3500
@@ -13,7 +14,16 @@ app.get(``, (req, res)=>{
     res.render(`index`)
 })
 
-app.use(cookieParser())
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie : {
+        secure:false,
+        httpOnly:true,
+        maxAge: 2 * 60 * 1000
+    }
+}))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
@@ -45,11 +55,11 @@ router.get(`/bookappointment`, isAuthenticated, (req, res)=>{
 
 
 router.get(`/dashboard`, isAuthenticated, (req, res)=>{
-    // console.log(req.patients);
+    console.log("code ran here")
     res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
     res.set('Pragma', 'no-cache')
     res.set('expires', '0')
-    res.render(`dashboard`,{ patient: req.patients })
+    res.render(`dashboard`,{ patient: req.session.user })
 })
 
 

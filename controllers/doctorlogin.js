@@ -1,6 +1,7 @@
 const db = require(`../database`)
 const jwt = require(`jsonwebtoken`)
 const bcrypt = require(`bcryptjs`)
+const session = require("express-session")
 
 
 exports.doctorlogin = (req, res) => {
@@ -23,19 +24,8 @@ exports.doctorlogin = (req, res) => {
                     error: `Invalid Email or password`
                 })
             }
-            const token = jwt.sign({role: 'doctor', doctor_id: result[0].doctor_id, firstname: result[0].firstname, email: result[0].email },
-                process.env.JWT_SECRET,
-                {
-                    expiresIn: process.env.JWT_EXPIRES
-                })
-            const cookieoptions = {
-                expires: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
-                httpOnly: true,
-                secure: process.env.NODE_ENV === 'production',
-                sameSite: 'Lax',
-
-            }
-            res.cookie(`userRegister`, token, cookieoptions)
+            req.session.authenticated = true;
+            req.session.doctor = {role: 'doctor', doctor_id: result[0].doctor_id, firstname: result[0].firstname, email: result[0].email }
             res.redirect(`/doctor/dashboard`)
         })
     }

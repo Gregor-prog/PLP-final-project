@@ -47,7 +47,7 @@ router.get(`/doctor/login`, (req, res)=>{
 })
 
 router.get(`/doctor/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
-    res.render(`doctordashboard`, {doctor: req.doctors})
+    res.render(`doctordashboard`, {doctor: req.session.doctor})
 })
 
 
@@ -62,7 +62,7 @@ router.get(`/admin/login`, (req,res)=>{
 })
 
 router.get(`/admin/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
-    res.render(`admin`, {admin: req.admins})
+    res.render(`admin`, {admin: req.session.admin})
 })
 
 //APPOINTMENTS

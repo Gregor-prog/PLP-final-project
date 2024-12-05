@@ -1,11 +1,9 @@
-const jwt = require(`jsonwebtoken`)
 const cookieParser = require(`cookie-parser`)
 
 
 
 exports.isAuthenticateddoctororadmin = (req, res, next) => {
-    const token = req.cookies.userRegister
-    if (!token) {
+    if (!req.session.authenticated) {
         if (req.url.includes(`/doctor`)) {
             return res.render(`logindoctor`, { error: `Session Expires, Please Re-Login` })
 
@@ -19,17 +17,7 @@ else{
     }
 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
-        console.log(decoded);
-
-        if (decoded.role === 'doctor') {
-            req.doctors = decoded
-            next()
-        } else if (decoded.role === 'admin') {
-            req.admins = decoded
-            next()
-        }
-
+        next()
     } catch (error) {
         console.log(error);
         if (req.url.includes(`/doctor`)) {

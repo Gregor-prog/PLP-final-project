@@ -23,20 +23,10 @@ exports.login = (req, res) => {
                     error: `Invalid Email or password`
                 })
             }
-            const token = jwt.sign({ patient_id: result[0].patient_id, firstname: result[0].firstname, email: result[0].email }, process.env.JWT_SECRET, {
-                expiresIn: process.env.JWT_EXPIRES
-            })
-
-            const cookieoptions = {
-                expires: new Date(Date.now() + 3600 * 24 * 60 * 60 * 1000),
-                httpOnly: true,
-                secure:true,
-                sameSite: 'Lax',
-            }
-
-            // console.log(cookieoptions);
-
-            res.cookie(`userRegister`, token, cookieoptions)
+            
+            const user = { patient_id: result[0].patient_id, firstname: result[0].firstname, email: result[0].email }
+            req.session.user = user
+            req.session.authenticated = true
             res.redirect(`/dashboard`)
         })
     }
@@ -200,17 +190,8 @@ exports.userlogin = (req, res) => {
             } else if (!result.length > 0 || !await bcrypt.compare(password, result[0].password)) {
                 return res.render(`userlogin`, { error: `Password/Email Do not Match` })
             } else {
-                const token = jwt.sign({ role: 'admin', admin_id: result[0].admin_id, firstname: result[0].firstname }, process.env.JWT_SECRET, {
-                    expiresIn: process.env.JWT_EXPIRES
-                })
-                const cookieoptions = {
-                    expires: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
-                    httpOnly: true,
-                    secure: process.env.NODE_ENV,
-                    sameSite: 'Lax'
-
-                }
-                res.cookie(`userRegister`, token, cookieoptions)
+                req.session.admin = { role: 'admin', admin_id: result[0].admin_id, firstname: result[0].firstname }
+               req.session.authenticated = true
                 res.redirect(`/admin/dashboard`)
             }
         })
