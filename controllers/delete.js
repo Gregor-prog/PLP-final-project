@@ -5,7 +5,7 @@ exports.deleted = (req, res)=>{
     
     const deleteId = req.params.id
 
-    db.query(`update patients set status = 'disable' where patient_id = ?`, [deleteId], (err, result)=>{
+    db.query(`delete patients where patient_id = ?`, [deleteId], (err, result)=>{
         if(err){
             console.log(`Unable to delete`);
             return res.render(`viewpatient`, {error: `Unable To Delete Patient Detail`})

@@ -16,7 +16,6 @@ db.getConnection((err, result)=>{
         
     }else(
         console.log(err)
-        
     )
 })
 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit=no>
+    <title>Patients Dashboard</title>
+</head>
+ <link rel="stylesheet" href="style.css">
+<body class="flex flex-col items-center bg-[#56c084b0]">
+    <header class="flex flex-col m-[20px] w-[100%] bg-[#d6d2d2] px-[5%]">
+        <h1 style="color: rgb(94, 128, 0); font-size:45px" class="ml-[15px] font-bold my-[10px]">MedConnect</h1>
+        <h3 style="margin-top: 10px; font-size: 40px;" class="ml-[15px]">Welcome <%=patient.firstname%></h3>
+        <div>
+        <h2 class="text-[30px] ml-[35px]">Dashboard</h2>
+        <form class="d-flex" role="search">
+        <div class="w-[100%] text-right">
+        <form class="mb-[20px]" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> <br>
+            <a href="/dashboard/edit-profile/<%=patient.patient_id%>" type="button" class="text-center w-[100%] p-[10px] mt-[15px]"
+                style="top: 10%; font-size:15px"><i class="">Edit Profile</i></a>
+            </div>
+    </header>
+    <label for="check" class="w-[100%]">
+        <h3 class="w-[100%] text-left text-[25px]" id="menu" style="margin-left: 70px; margin-top: 20px;"> <input type="checkbox" name="menu" id="check" class="w-[25px] m-[5px]"><i class="text-[25px]" id="btn"></i>Menu</h3>
+        <i class="bi bi-x-circle-fill" id="cancel"></i>
+    </label>
+    <nav class="w-[50%] hidden absolute top-[280px] left-[20px] sm:left-[50px] sm:w-[30%] animate-slide-in-left bg-[#3ebf7691] p-[20px] rounded-xl" id="nav">
+        <ul class="toplist">
+        <h1 style="color: rgb(94, 128, 0); font-size:25px">MedConnect</h1>
+            <h2>Welcome <br>
+                <%=patient.firstname %></h2>
+
+
+            <li class="hover:bg-[#424242] py-[10px] border-t-[2px]"><a href=""><i class="bi bi-house-up-fill"></i> Home</a></li>
+
+            <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href="/bookappointment"><i class="bi bi-bookmarks-fill"></i> Book Appointment</a></li>
+
+            <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href="/patient/viewdoctor"><i class="bi bi-person-fill"></i> View Doctors</a></li>
+
+            <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href="/checkappointment"><i class="bi">&#x1F9EA;</i> check appointments</a></li>
+
+            <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href=""><i class="bi bi-capsule"></i> Medicine</a></li>
+            <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href=""><i class="bi bi-clipboard2-pulse"></i> Medical Test</a></li>
+            <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href=""><i class="bi bi-prescription2"></i></i> Prescriptions</a></li>
+            <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href=""><i class="bi bi-file-medical"></i> Health Record</a></li>
+
+                <ul class="bottomlist">
+
+                    <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href=""><i class="bi bi-gear-fill"></i> General</a></li>
+
+                    <li class="hover:bg-[#42424294] py-[10px] border-t-[2px]"><a href="/logout"><i class="bi bi-box-arrow-left"></i> </i>Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section class="w-[100%] mt-[40px]">
+        <div class="flex flex-col items-center sm:flex-row w-[100%] justify-evenly">
+            <div class=" h-[200px] w-[270px] flex flex-col items-center p-[10px] rounded-xl m-[20px] shadow-2xl" style="background-color: #ccc5b9; justify-content:space-between ">
+                <img class="h-[100px]" src="/images/heartbeat.png" alt="" class="heart">
+                <h5 class="text-[26px] font-semibold text-[#3ebf75]">Heart rate</h5>
+                <p class="text-[26px] text-[#3ebf75]">90BPM</p>
+            </div>
+            <div class=" h-[200px] w-[270px] flex flex-col items-center p-[10px] rounded-xl m-[20px] shadow-2xl" style="background-color: #403d39; justify-content:space-between ">
+                <img class="h-[100px]" src="/images/weight-management.png" alt="" class="heart">
+                <h5 class="text-[26px] font-semibold text-[#3ebf75]" style="margin-left: 20%;">Total Weight</h5>
+                <p class="text-[26px] text-[#3ebf75]">72KG</p>
+            </div>
+            <div class=" h-[200px] w-[270px] flex flex-col items-center p-[10px] rounded-xl m-[20px] shadow-2xl" style="background-color: #EB5E28; justify-content:space-between ">
+                <img class="h-[100px]" src="/images/Human-red-blood-cells.png" alt="" class="heart">
+                <h5 class="text-[26px] font-semibold text-[#3ebf75]" >Blood cells</h5>
+                <p class="text-[26px] text-[#3ebf75]">1500μL</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center sm:flex-row w-[100%] justify-evenly mt-[30px]">
+            <div class=" h-[250px] w-[270px] flex flex-col items-center p-[10px] rounded-xl m-[20px] shadow-2xl" style="background-color: #ccc5b9;">
+                <img class="h-[100px]" src="/images/team-3copy.jpg" alt="" class="heart">
+                <h4 class="m-[7px] text-[25px] text-[#2bcf2b]">Sara Ab</h4>
+                <p class="text-gray-600 font-semibold" style="margin-top: 40px;">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                 <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
+            </div>
+            <div class=" h-[250px] w-[270px] flex flex-col items-center p-[10px] rounded-xl m-[20px] shadow-2xl" style="background-color: #ccc5b9; ">
+                <img class="h-[100px]" src="/images/team-2copy.jpg" alt="" class="heart">
+                <h4 class="m-[7px] text-[25px] text-[#2bcf2b]">Mike Myers</h3>
+                <p class="text-gray-600 font-semibold" style="margin-top: 40px;">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
+            </div>
+            <div class=" h-[250px] w-[270px] flex flex-col items-center p-[10px] rounded-xl m-[20px] shadow-2xl" style="background-color: #ccc5b9; ">
+                <img class="h-[100px]" src="/images/team-1copy.jpg" alt="" class="heart">
+                 <h4 class="m-[7px] text-[25px] text-[#2bcf2b]">Jordan	Michael</h4>
+                <p class="text-gray-600 font-semibold">Lorem ipsum dolor sit amet consecteturvident debitis laborum</p>
+                 <a href="https://wa.me/2348140470626" target="_blank" style="font-size: 15px;" class="btn btn-light directmessage"><i class="bi bi-whatsapp"></i>  Direct Message</a>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="w-full bg-gray-200 flex-col flex items-center sm:flex-row sm:h-[300px]">
+        <div class="flex flex-col items-center sm:w-[50%] h-[100%] justify-evenly">
+            <h1 class="w-[30%] text-[40px] font-semibold text-[#3ebf75]">medConnect</h1>
+            <p class="text-[#a1a1a1] text-[15px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br> Nulla odit accusamus adipisci optio quos expedita beatae amet, explicabo delectus!</p>
+            <div class="flex w-[80%]  items-center justify-evenly">
+                <img src="images/facebookicon.png" alt="">
+                <img src="images/whatsappicon.png" alt="">
+                <img src="images/twitter.avif" alt=""></div>
+        </div>
+
+        <div class="grid-cols-3 w-full grid mt-[30px] sm:w-[50%] sm:h-[70%] ">
+            <p><a href="">Home</a></p>
+            <p><a href="">Contact Us</a></p>
+            <p><a href="">About</a></p>
+            <p><a href="">Learn More</a></p>
+            <p><a href="">Contact Our developers</a></p>
+            <p><a href="">Location</a></p>
+        </div>
+    </div>
+
+    <script>
+        let check = document.querySelector("#check")
+        let nav = document.querySelector("#nav")
+        let list = document.querySelector("li")
+check.addEventListener("click", () => {
+        if(check.checked){
+            nav.style.display = "block";
+            console.log("code ran here")
+        }
+        else if(!check.checked){
+            nav.style.display = "none"
+        }
+
+})
+
+li.addEventListener("hover", () => {
+    li.forEach(element => {
+        element.style.backgroundColor = "gray"
+        element.style.padding = "10px"
+    });
+})
+    </script>
+</body>
+
+</html>

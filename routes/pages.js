@@ -3,6 +3,9 @@ const router = express.Router();
 const cookieParser = require(`cookie-parser`)
 const {isAuthenticated} = require(`../middlewares/auth`);
 const { isAuthenticateddoctororadmin } = require("../middlewares/authdoctor");
+const ejs = require("ejs")
+const viewdoctor = require("../controllers/viewdoctor")
+const db = require("../database.js")
 
 
 router.get(``, (req, res)=>{
@@ -21,11 +24,11 @@ router.get(`/patient`, (req, res)=>{
     res.render(`patient`)
 })
 router.get(`/signup`, (req, res)=>{
-    res.render(`register`)
+    res.render(`register`, {error: null})
 })
 
 router.get(`/signin`, (req, res)=>{
-    res.render(`login`)
+    res.render(`login`, {error: null})
 })
 
 router.get(`/dashboard/edit-profile`, isAuthenticated, (req, res)=>{
@@ -43,7 +46,7 @@ router.get(`/registerdoctor`, (req, res)=>{
 })
 
 router.get(`/doctor/login`, (req, res)=>{
-    res.render(`logindoctor`)
+    res.render(`logindoctor`, {error:undefined})
 })
 
 router.get(`/doctor/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
@@ -58,7 +61,7 @@ router.get(`/registeradmin`, (req, res)=>{
 })
 
 router.get(`/admin/login`, (req,res)=>{
-    res.render(`userlogin`)
+    res.render(`userlogin`,{error:undefined})
 })
 
 router.get(`/admin/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
@@ -67,10 +70,27 @@ router.get(`/admin/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
 
 //APPOINTMENTS
 router.get("/bookappointment", (req,res) => {
-    res.render("bookappointment")
+    const query = "select * from doctors"
+    db.query(query, (error,result) => {
+        if(error){
+            console.log(error)
+        }
+        else{
+            res.render("bookappointment", {error:null, result } )
+        }
+    })
 })
 router.get("/checkappointment", (req,res) => {
-    res.render("appointments")
+    const query = "select * from appointment"
+    db.query(query, (error, result) => {
+        if(error){
+            console.log(error)
+            res.status(404).send(error)
+        }
+        else{
+        res.render("appointments", result)
+        }
+    })
 })
 
 
@@ -111,7 +131,7 @@ router.get(`/adminlogout`, (req, res)=>{
 
 // ROUTES BEEN ON P
 
-router.get(`/viewpatient`,  isAuthenticateddoctororadmin)
+router.get(`/viewpatient`,  isAuthenticateddoctororadmin, )
 router.post(`/viewpatient`,  isAuthenticateddoctororadmin)
 router.get(`/editpatient/:id`, isAuthenticateddoctororadmin)
 router.post(`/editpatient/:id`,  isAuthenticated)

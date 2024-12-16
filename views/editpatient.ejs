@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header class="h-[40%] w-[100%]  flex flex-row items-center hover:visible">
+        <h1 class="w-[30%] text-[40px] font-semibold px-[30px] text-[#3ebf75]">medConnect</h1>
+        <nav class="flex w-[100%] items-center justify-center relative mt-[80px] sm:mt-0">
+            <ul class="flex w-[100%] sm:w-[50%] items-center justify-evenly">
+                <li>home</li>
+                <li>contact</li>
+                <li>about</li>
+            </ul>
+            <ul id="nav" class=" items-center text-center absolute top-[90%] left-[75%] bg-white flex-col justify-evenly
+             rounded-xl hidden border border-gray-300 sm:left-[90%]">
+                <li class="px-[45px] py-[15px] border-b border-gray-500 W-[100%] hover:bg-slate-400"><a href="/signup">Patient's page</a></li>
+                <li class="px-[45px] py-[15px] border-b border-gray-500 W-[100%] hover:bg-slate-400"><a href="/doctor/dashboard">Doctor's Page</a></li>
+                <li class="px-[45px] py-[15px]  W-[100%] hover:bg-slate-400"><a href="/admin/dashboard">Admin's page</a></li>
+            </ul>
+        </nav>
+        <div class="items-end w-[20%]">
+            <h1 class="font-bold cursor-pointer text-[#3ebf75]" id="x">X</h1>
+        </div>
+    </header>
+    
+
+    <div id="container" class="flex flex-row items-center justify-center mt-[40px]">
+        <form action="/editpatient/<%=row.patient_id%>" method="post" class="w-[80%] bg-[gray] rounded-xl my-[20px] p-[10px]">
+            <div id="pic" class="w-[100%] flex flex-row items-center justify-center my-[30px]">
+                <img src="/profileimg.jpg" alt="">
+            </div>
+            <div id="form" class=" flex flex-col items-center">
+                <h4 style="text-align: center;" class="w-[100%] text-[30px] font-semibold">Edit Patients Data</h4>
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="firstname" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Surname:</label><br>
+                        <input type="text" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="firstname" id="firstname" placeholder="Surname" required value="<%=row.firstname%>">
+                    </div>
+
+                   <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="lastname" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Firsrt Name:</label><br>
+                        <input type="text" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="lastname" id="lastname" placeholder="First Name" required value="<%=row.lastname%>">
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="email" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Email Address:</label><br>
+                        <input type="email" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="email" id="email" placeholder="Email Address" required value="<%=row.email%>">
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="phone" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Phone Number:</label><br>
+                        <input type="tel" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="phone" id="phone" placeholder="Phone Number" required  value="<%=row.phone%>">
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="address" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Home Address:</label><br>
+                        <input type="text" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="address" id="address" placeholder="Home Address" required  value="<%=row.address%>">
+                    </div>
+
+                    
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="gender"  class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Gender</label>
+                        <select name="gender" id="gender" class="rounded border-[#3ebf75] border-[3px] w-[70%]" required>
+                            <option value="N/A">Select</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="date_of_birth" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Date Of Birth:</label><br>
+                        <input type="date" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="date_of_birth" id="date_of_birth" placeholder="Date Of Birth" required  value="<%=row.date_of_birth%>">
+                    </div>
+
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="password" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Password</label><br>
+                        <input type="password" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="password" id="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center w-[100%] my-[20px]">
+                        <label for="passwordconfirm" class="text-[25px] font-semibold text-white w-[60%] text-left m-[0px]">Confirm Password</label><br>
+                        <input type="password" class="rounded-sm h-[40px] w-[60%] p-[10px] border-[#3ebf75] border-[2px] m-[0px]" name="passwordconfirm" id="passwordconfirm" placeholder="Confirm Password" required>
+                    </div>
+                    <input type="submit" class="bg-white px-[20px] py-[10px] rounded-xl" value="Edit">
+                    
+                    
+                    
+
+            </div>
+        </form>
+
+        
+    </div>
+
+    <div class="w-full bg-gray-200 flex-col flex items-center sm:flex-row sm:h-[300px]">
+        <div class="flex flex-col items-center sm:w-[50%] h-[100%] justify-evenly">
+            <h1 class="w-[30%] text-[40px] font-semibold text-[#3ebf75]">medConnect</h1>
+            <p class="text-[#a1a1a1] text-[15px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br> Nulla odit accusamus adipisci optio quos expedita beatae amet, explicabo delectus!</p>
+            <div class="flex w-[80%]  items-center justify-evenly">
+                <img src="images/facebookicon.png" alt="">
+                <img src="images/whatsappicon.png" alt="">
+                <img src="images/twitter.avif" alt=""></div>
+        </div>
+
+        <div class="grid-cols-3 w-full grid mt-[30px] sm:w-[50%] sm:h-[70%] ">
+            <p><a href="">Home</a></p>
+            <p><a href="">Contact Us</a></p>
+            <p><a href="">About</a></p>
+            <p><a href="">Learn More</a></p>
+            <p><a href="">Contact Our developers</a></p>
+            <p><a href="">Location</a></p>
+        </div>
+    </div>
+
+    
+<script>
+    let x = document.querySelector("#x")
+    let nav = document.querySelector("#nav")
+    x.addEventListener("click", () => {
+        if(nav.style.display == "none"){
+            nav.style.display = "flex"
+        }
+        else{
+            nav.style.display = "none"
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-{100vh} w-{100vw}">
+    <header class="h-[40%] w-[100%]  flex flex-row items-center hover:visible">
+        <h1 class="w-[30%] text-[40px] font-semibold px-[30px] text-[#3ebf75]">medConnect</h1>
+        <nav class="flex w-[100%] items-center justify-center relative mt-[80px] sm:mt-0">
+            <ul class="flex w-[100%] sm:w-[50%] items-center justify-evenly">
+                <li>home</li>
+                <li>contact</li>
+                <li>about</li>
+            </ul>
+            <ul id="nav" class=" items-center text-center absolute top-[90%] left-[75%] bg-white flex-col justify-evenly
+             rounded-xl hidden border border-gray-300 sm:left-[90%]">
+                <li class="px-[45px] py-[15px] border-b border-gray-500 W-[100%] hover:bg-slate-400"><a href="/dashboard">Patient's page</a></li>
+                <li class="px-[45px] py-[15px] border-b border-gray-500 W-[100%] hover:bg-slate-400"><a href="/doctor/dashboard">Doctor's Page</a></li>
+                <li class="px-[45px] py-[15px]  W-[100%] hover:bg-slate-400"><a href="/admin/dashboard">Admin's page</a></li>
+            </ul>
+        </nav>
+        <div class="items-end w-[20%]">
+            <h1 class="font-bold cursor-pointer text-[#3ebf75]" id="x">X</h1>
+        </div>
+    </header>
+    <div id="container"  class="flex flex-col items-center">
+        <div id="1" class="m-[30px] sm:flex sm:h-[500px]">
+            <div id="text1" class="text-center sm:text-left sm:w-[50%]  h-[100%] flex flex-col items-center justify-center sm:items-start sm:ml-[70px] my-[60px]">
+                <h1 class="text-[35px] text-center sm:text-left w-[100%] sm:w-[]">We Provide The Best <br>
+                <span class="text-[#3ebf75]">Healthcare Solution</span> <br>
+                At Home</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsum eaque, <br>modi ratione non, ducimus</p>
+                <button class="p-[15px] bg-[#3ebf75] m-[20px] rounded-xl animate-bounce">Learn More...</button>
+            </div>
+            <div id="pic1">
+                <div class="rounded-full overflow-hidden h-[500px] w-[500px]">
+                    <img src="images/team-2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="2" class="flex flex-col items-center justify-center">
+                <h1 class="font-bold text-[40px] p-[10px] border-b-[5px] border-[#3ebf75]">Why Choose Us?</h1>
+            <div id="cards" class="flex flex-col items-center justify-center sm:flex-row sm:justify-evenly">
+                <div id="card1" class="my-[70px] w-[75%]  sm:w-[18%] h-[640px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-around] p-[10px]">
+                    <div class="h-[300px] sm:h-[200px]"><img src="images/cadiologyimg.jpg" alt="" class="h-[300px] sm:h-[160px]"></div>
+                    <div id="text" class="flex flex-col items-center justify-center">
+                        <h2 class="text-[45px] sm:text-[25px] font-semibold text-[#3ebf75]">Cardiology</h2>
+                        <p class="text-[25px] sm:text-[15px] text-center text-gray-500 w-[80%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi, minima expedita voluptate deleniti nisi </p>
+                    </div>
+                </div>
+                
+                <div id="card2" class="my-[70px] w-[75%]  sm:w-[18%] h-[640px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-around] p-[10px]">
+                    <div class="h-[300px]  sm:h-[200px]"><img src="images/dentalimg.jpg" alt="" class="h-[300px] sm:h-[160px]"></div>
+                    <div id="text" class="flex flex-col items-center justify-center">
+                        <h2 class="text-[45px] sm:text-[25px] font-semibold text-[#3ebf75]">Dentisry</h2>
+                        <p class="text-[25px] sm:text-[15px] text-center text-gray-500 w-[80%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi, minima expedita voluptate deleniti nisi </p>
+                    </div>
+                </div>
+
+
+                <div id="card3" class="my-[70px] w-[75%]  sm:w-[18%] h-[640px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-around] p-[10px]">
+                    <div class="h-[300px]  sm:h-[200px]"><img src="images/nurologyimg.png" alt="" class="h-[300px] sm:h-[160px]"></div>
+                    <div id="text" class="flex flex-col items-center justify-center">
+                        <h2 class="text-[45px] sm:text-[25px] font-semibold text-[#3ebf75]">Neurology</h2>
+                        <p class="text-[25px] sm:text-[15px] text-center text-gray-500 w-[80%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi, minima expedita voluptate deleniti nisi </p>
+                    </div>
+                </div>
+
+
+                <div id="card3" class="my-[70px] w-[75%]  sm:w-[18%] h-[640px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-around] p-[10px]">
+                    <div class="h-[300px]  sm:h-[200px]"><img src="images/orthopedics.jpg" alt="" class="h-[300px] sm:h-[160px]"></div>
+                    <div id="text" class="flex flex-col items-center justify-center">
+                        <h2 class="text-[45px] sm:text-[25px] font-semibold text-[#3ebf75]">orthopedics</h2>
+                        <p class="text-[25px] sm:text-[15px] text-center text-gray-500 w-[80%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi, minima expedita voluptate deleniti nisi </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="2" class="m-[30px] sm:flex sm:h-[500px]">
+            <div id="pic1">
+                <div class="rounded-full overflow-hidden h-[500px] w-[500px] shadow-2xl border-[2px] border-[#3ebf75]">
+                    <img src="images/sect3img2.jpg" alt="">
+                </div>
+            </div>
+            <div id="text1" class="text-center sm:text-left sm:w-[50%]  h-[100%] flex flex-col items-center justify-center sm:items-start sm:ml-[70px] my-[60px]">
+                <h1 class="text-[45px] text-center sm:text-left w-[100%] sm:w-[]">Consult a Doctor <br>
+                <span class="text-[#3ebf75]">Anytime, Anywhere</span> </h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsum eaque, <br>modi ratione non, ducimus</p>
+                <button class="p-[15px] bg-[#3ebf75] m-[20px] rounded-xl text-white">Connect</button>
+            </div>
+            
+        </div>
+
+
+        <div id="4" class="flex flex-col items-center justify-center">
+            <h1 class="font-bold text-[40px] p-[10px] border-b-[5px] border-[#3ebf75]">Meet Our Expert <br> Doctors!</h1>
+        <div id="cards" class="flex flex-col items-center justify-center sm:flex-row sm:justify-evenly w-[100%]">
+            <div id="card1" class="bg-[url('images/sect3img2.jpg')] bg-cover bg-center bg-no-repeat my-[70px] w-[85%]  sm:w-[23%] h-[600px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-end p-[30px] ">
+                <div id="text" class="flex flex-col items-center justify-end bg-[#808080d3] ">
+                    <h2 class="text-[45px] sm:text-[25px] font-semibold text-white">Mr jDoe</h2>
+                    <p class="text-[25px] sm:text-[15px] text-center text-[black] w-[80%]">Specializes In: Cardiology</p>
+                </div>
+            </div>
+            
+            <div id="card2" class="bg-[url('images/team-1.jpg')] bg-cover bg-center bg-no-repeat my-[70px] w-[85%]  sm:w-[23%] h-[600px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-end p-[30px] ">
+                <div id="text" class="flex flex-col items-center justify-end bg-[#808080d3] ">
+                    <h2 class="text-[45px] sm:text-[25px] font-semibold text-white">Mrs bolon</h2>
+                    <p class="text-[25px] sm:text-[15px] text-center text-[black] w-[80%]">Specializes In: Neurology</p>
+                </div>
+            </div>
+
+            <div id="card3" class="bg-[url('images/team-3.jpg')] bg-cover bg-center bg-no-repeat my-[70px] w-[85%]  sm:w-[22%] h-[600px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-end p-[30px] ">
+                <div id="text" class="flex flex-col items-center justify-end bg-[#808080d3] ">
+                    <h2 class="text-[45px] sm:text-[25px] font-semibold text-white">Mrs sho</h2>
+                    <p class="text-[25px] sm:text-[15px] text-center text-[black] w-[80%]">Specializes In: Orthopedics</p>
+                </div>
+            </div>
+
+            <div id="card4" class="bg-[url('images/team-4.jpg')] bg-cover bg-center bg-no-repeat my-[70px] w-[85%]  sm:w-[22%] h-[600px] sm:h-[340px] rounded-[12px] border-[5px] border-[#3ebf75] shadow-2xl flex flex-col items-center justify-end p-[30px] ">
+                <div id="text" class="flex flex-col items-center justify-end bg-[#808080d3] ">
+                    <h2 class="text-[45px] sm:text-[25px] font-semibold text-white">Mr Darell</h2>
+                    <p class="text-[25px] sm:text-[15px] text-center text-[black] w-[80%]">Specializes In: Dentistry</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <div id="5" class="h-[750px] bg-[#3ebf75] flex flex-col w-[80%] rounded-2xl drop-shadow-sm sm:flex-row sm:h-[300px] mb-[60px] overflow-hidden">
+        <img src="images/sect2bg.jpg" alt="" class="sm:w-[30%] sm:h-[300px]">
+        <div id="text5" class="p-[10px] mt-[30px]">
+            <h1 class= "text-[30px] text-white font-bold mb-[20px]" >Find The Right Doctor For <br> Yourself</h1>
+            <p class="text-white text-[15px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br> Nulla odit accusamus adipisci optio quos expedita beatae amet, explicabo delectus!</p>
+            <div class="flex flex-row items-center justify-evenly mt-[30px]">
+                <button class="p-[10px] bg-white rounded-xl font-bold">Play Store</button>
+                <button class="p-[10px] bg-white rounded-xl font-bold">App store</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="w-full bg-gray-200 flex-col flex items-center sm:flex-row sm:h-[300px]">
+        <div class="flex flex-col items-center sm:w-[50%] h-[100%] justify-evenly">
+            <h1 class="w-[30%] text-[40px] font-semibold text-[#3ebf75]">medConnect</h1>
+            <p class="text-[#a1a1a1] text-[15px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br> Nulla odit accusamus adipisci optio quos expedita beatae amet, explicabo delectus!</p>
+            <div class="flex w-[80%]  items-center justify-evenly">
+                <img src="images/facebookicon.png" alt="">
+                <img src="images/whatsappicon.png" alt="">
+                <img src="images/twitter.avif" alt=""></div>
+        </div>
+
+        <div class="grid-cols-3 w-full grid mt-[30px] sm:w-[50%] sm:h-[70%] ">
+            <p><a href="">Home</a></p>
+            <p><a href="">Contact Us</a></p>
+            <p><a href="">About</a></p>
+            <p><a href="">Learn More</a></p>
+            <p><a href="">Contact Our developers</a></p>
+            <p><a href="">Location</a></p>
+        </div>
+    </div>
+
+    </div>
+</body>
+<script>
+    let x = document.querySelector("#x")
+    let nav = document.querySelector("#nav")
+    x.addEventListener("click", () => {
+        if(nav.style.display == "none"){
+            nav.style.display = "flex"
+        }
+        else{
+            nav.style.display = "none"
+        }
+    })
+</script>
+</html>

@@ -1,5 +1,4 @@
 const db = require(`../database`)
-const jwt = require(`jsonwebtoken`)
 const bcrypt = require(`bcryptjs`)
 require(`dotenv`).config();
 
@@ -41,7 +40,8 @@ exports.viewprofile = (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.render(`viewprofile`, { rows })
+            const [row] = rows
+            res.render(`viewprofile`, { row })
         }
     })
 }
@@ -51,7 +51,9 @@ exports.doctorviewprofile = (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.render(`viewdoctorprofile`, { rows })
+            const [row] = rows
+            res.render(`viewdoctorprofile`, { row })
+            console.log(rows)
         }
     })
 }
@@ -72,8 +74,9 @@ exports.doctorupdateprofile = (req, res)=>{
             if (err) {
                 console.log(err);
             } else {
+                const [row] = rows
                 return res.render(`viewdoctorprofile`, {
-                    rows: rows,
+                    row ,
                     error: `password do not match`
                 })
             }
@@ -99,8 +102,9 @@ exports.doctorupdateprofile = (req, res)=>{
                             if (err) {
                                 console.log(err);
                             } else {
+                                const [row] = rows
                                 res.render(`viewdoctorprofile`, {
-                                    rows: rows,
+                                    row,
                                     message: `Updated successfully`
                                 })
                             }

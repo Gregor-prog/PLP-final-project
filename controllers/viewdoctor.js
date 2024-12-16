@@ -1,21 +1,17 @@
 const db = require(`../database`)
 const express = require(`express`)
-// Design by Kelani Yunus Oluwadamilare 
-// email yunuskelani2@gmail.com//
-// phone: +2348140470626
 const { search } = require("../routes/pages")
 const router = express.Router()
 
 exports.doctor = (req, res)=>{
-    db.query(`select firstname, lastname, email, specialty, phone, doctor_id from doctors where status = "active"`, (err, rows)=>{
+    db.query(`select firstname, lastname, email, specialty, phone, doctor_id from doctors`, (err, rows)=>{
         if(err){
             
             
             console.log(err);
             
         }else{
-            console.log(rows);
-            res.render(`viewdoctors`,{rows});     
+            res.render(`viewdoctors`,{rows}); 
         }        
     } )   
 }
@@ -36,11 +32,12 @@ exports.find = (req, res)=>{
 
 
 exports.viewpatient = (req, res)=>{
-    db.query(`select patient_id, firstname, lastname, email, gender, address,  phone from patients where status = 'active'`, (err, rows)=>{
+    db.query(`select patient_id, firstname, lastname, email, gender, address,  phone from patients `, (err, rows)=>{
         if(err){
             console.log(err);
             
         }else{
+            const [row] = row
             res.status(200).render(`viewpatient`,{rows})
         }
     })
@@ -71,7 +68,8 @@ db.query(`select * from patients where patient_id = ?`,[req.params.id], (err, ro
         console.log(err);
         
     }else{
-        res.render(`editpatient`, { rows })
+        const [row] = rows
+        res.render(`editpatient`, { row  })
     }
 })
 // console.log(req.params.id);
@@ -81,7 +79,7 @@ exports.update = (req, res)=>{
     const {firstname, lastname, email, address, phone, date_of_birth, gender} = req.body
     // console.log(req.body);
     // console.log(req.params.id);
-    db.query(`update patients set firstname = ?, lastname = ?, email = ?, gender = ?, date_of_birth = ?, phone = ?, address = ? where patient_id = ?`,[firstname, lastname, email, gender, date_of_birth, phone, address, req.params.id], (err, result)=>{
+    db.query(`update patients set firstname = ?, lastname = ?, email = ?, gender = ?, date_of_birth = ?, phone = ?, address = ? where firstname = ?`,[firstname, lastname, email, gender, date_of_birth, phone, address, req.params.id], (err, result)=>{
         
         // res.send(`Updated`)
         if(err){
@@ -89,12 +87,13 @@ exports.update = (req, res)=>{
             return res.redirect(`/viewpatient`)
             
         }else{
-            db.query(`select patient_id, firstname, lastname, email, gender, address, phone from patients where status = 'active' `, (err, rows)=>{
+            db.query(`select patient_id, firstname, lastname, email, gender, address, phone from patients `, (err, rows)=>{
                 if(err){
                     console.log(err);
                     
                 }else{
-                    res.status(200).render(`viewpatient`, {rows})
+                    const [row] = rows
+                    res.status(200).render(`viewpatient`, { row })
                 }
             })
         }

@@ -6,7 +6,7 @@ const { isAuthenticateddoctororadmin } = require(`./middlewares/authdoctor`)
 const router = require(`./routes/pages`)
 const path = require(`path`)
 const session = require("express-session")
-
+const ejs = require("ejs")
 const app = express();
 const port = process.env.PORT || 3500
 
@@ -21,7 +21,7 @@ app.use(session({
     cookie : {
         secure:false,
         httpOnly:true,
-        maxAge: 2 * 60 * 1000
+        maxAge: 10 * 60 * 1000
     }
 }))
 app.use(express.urlencoded({extended: false}))
@@ -34,7 +34,7 @@ app.use(`/auth`, require(`./routes/auth`))
 app.use(express.static(`./public`))
 app.use(express.static(`./public/images`))
 
-app.set(`view engine`, `hbs`)
+app.set(`view engine`, `ejs`)
 
 
 
