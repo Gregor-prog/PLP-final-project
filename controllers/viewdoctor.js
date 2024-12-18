@@ -100,37 +100,3 @@ exports.update = (req, res)=>{
     })
 }
 
-
-// exports.update = (req, res)=>{
-//     const {firstname, lastname, phone, email, address, gender} = req.body
-//      let requestid = parseInt([req.params.id])
-//     db.query(`UPDATE patients SET firstname = ?, lastname = ?, email = ?, phone = ?, address = ?, gender = ?  WHERE patient_id = ?`,[firstname,lastname,email, phone, address, gender,requestid], (err, row)=>{
-//         if(!err){
-//             db.query(`select * from patients where patient_id = ?`, [req.params.id], (err, result)=>{
-//                 if(!err)
-//                     {
-//                     db.query(`select * from patients where patient_id = ?`,[req.params.id], (err, row)=>{
-                
-//                         if(!err){
-//                             res.render(`editpatients`, { row, 
-//                                 message: `User ${lastname} ${firstname}'s Details edited successfully`
-//                              })
-                            
-                            
-//                         }else{
-//                             console.log(err);
-                            
-//                         }
-//                     })
-                    
-                    
-//                 }
-//             })
-//         }
-//         else{
-//         console.log(err);
-        
-//     }
-// })
-            
-// }

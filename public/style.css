@@ -604,16 +604,28 @@ video {
   left: 75%;
 }
 
-.top-\[280px\] {
-  top: 280px;
+.top-\[300px\] {
+  top: 300px;
 }
 
 .top-\[90\%\] {
   top: 90%;
 }
 
-.clear-start {
-  clear: inline-start;
+.top-\[330px\] {
+  top: 330px;
+}
+
+.top-\[30px\] {
+  top: 30px;
+}
+
+.top-\[370px\] {
+  top: 370px;
+}
+
+.top-\[350px\] {
+  top: 350px;
 }
 
 .m-\[0px\] {
@@ -638,10 +650,6 @@ video {
 
 .m-\[7px\] {
   margin: 7px;
-}
-
-.m-\[\] {
-  margin: ;
 }
 
 .my-\[10px\] {
@@ -710,8 +718,16 @@ video {
   margin-top: 0.75rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-\[15px\] {
   margin-top: 15px;
+}
+
+.mt-\[20px\] {
+  margin-top: 20px;
 }
 
 .mt-\[30px\] {
@@ -724,26 +740,6 @@ video {
 
 .mt-\[80px\] {
   margin-top: 80px;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-\[\] {
-  margin-top: ;
-}
-
-.mt-\[5\] {
-  margin-top: 5;
-}
-
-.mt-\[10px\] {
-  margin-top: 10px;
-}
-
-.mt-\[20px\] {
-  margin-top: 20px;
 }
 
 .block {
@@ -810,14 +806,6 @@ video {
   height: 750px;
 }
 
-.h-\[\] {
-  height: ;
-}
-
-.h-\[50px\] {
-  height: 50px;
-}
-
 .w-\[100\%\] {
   width: 100%;
 }
@@ -866,20 +854,16 @@ video {
   width: 85%;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .w-\[98\%\] {
   width: 98%;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-\[full\] {
-  width: full;
-}
-
-.w-\[90\%\] {
-  width: 90%;
 }
 
 @keyframes bounce {
@@ -970,6 +954,14 @@ video {
   border-width: 1px;
 }
 
+.border-\[10px\] {
+  border-width: 10px;
+}
+
+.border-\[1px\] {
+  border-width: 1px;
+}
+
 .border-\[2px\] {
   border-width: 2px;
 }
@@ -980,14 +972,6 @@ video {
 
 .border-\[5px\] {
   border-width: 5px;
-}
-
-.border-\[10px\] {
-  border-width: 10px;
-}
-
-.border-\[1px\] {
-  border-width: 1px;
 }
 
 .border-b {
@@ -1015,10 +999,6 @@ video {
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity, 1));
-}
-
-.border-\[\] {
-  border-color: ;
 }
 
 .bg-\[\#3ebf75\] {
@@ -1111,14 +1091,6 @@ video {
   padding: 30px;
 }
 
-.p-\[50px\] {
-  padding: 50px;
-}
-
-.p-\[\] {
-  padding: ;
-}
-
 .px-\[20px\] {
   padding-left: 20px;
   padding-right: 20px;
@@ -1164,10 +1136,6 @@ video {
 
 .text-right {
   text-align: right;
-}
-
-.text-end {
-  text-align: end;
 }
 
 .text-\[15px\] {
@@ -1244,10 +1212,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\] {
-  color: ;
 }
 
 .shadow-2xl {
