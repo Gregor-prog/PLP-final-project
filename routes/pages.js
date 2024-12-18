@@ -52,6 +52,9 @@ router.get(`/doctor/login`, (req, res)=>{
 router.get(`/doctor/dashboard`, isAuthenticateddoctororadmin, (req, res)=>{
     res.render(`doctordashboard`, {doctor: req.session.doctor})
 })
+router.get('/admin/viewdoctor', (req,res) => {
+    res.render("viewdoctors")
+})
 
 
 // ADMINS

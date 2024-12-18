@@ -37,7 +37,7 @@ exports.viewpatient = (req, res)=>{
             console.log(err);
             
         }else{
-            const [row] = row
+            const [row] = rows
             res.status(200).render(`viewpatient`,{rows})
         }
     })

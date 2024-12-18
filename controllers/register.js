@@ -128,28 +128,3 @@ exports.adduser = (req, res)=>{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Design by Kelani Yunus Oluwadamilare
-// email yunuskelani2@gmail.com//
-//  phone: +2348140470626
